@@ -1,0 +1,23 @@
+//difference in null, undefined://
+
+The difference between null and undefined is: JavaScript will never set anything to null, that's usually what we do. While we can set variables to undefined, we prefer null because it's not something that is ever done for us. When you're debugging this means that anything set to null is of your own doing and not JavaScript. Beyond that, these two special values are nearly equivalent.
+
+The undefined value is a primitive value used when a variable has not been assigned a value.
+
+null is a special keyword that indicates an absence of value.
+undefined: absence of variable itself;
+
+null==undefined =>true;
+null===undefined =>false; ( object type vs undefined type);
+
+The difference can be explained with toilet tissue holder:
+
+A non-zero value is like a holder with roll of toilet tissue and there's tissue still on the tube.
+
+A zero value is like a holder with an empty toilet tissue tube.
+
+A null value is like a holder that doesn't even have a tissue tube.
+
+An undefined value is similar to the holder itself being missing.
+////
+

@@ -1,5 +1,4 @@
 //Synchronous and Asynchronous 
-//want to add new line1
 function getData(data)
 {
     return new Promise((resolve,reject)=>{
@@ -10,9 +9,21 @@ function getData(data)
     });
 }
 
+// callback hell
+getData(1, () => {
+  console.log("getting data2 ....");
+  getData(2, () => {
+    console.log("getting data3 .....");
+    getData(3, () => {
+      console.log("getting data4 .....");
+      getData(4);
+    });
+  });
+});
+//It was complex and hard to understand. So, we move to promises
 
 
-
+// Accessing using Promises:
 getData(1).then((res)=>
 {
     return getData(2);
@@ -23,3 +34,16 @@ getData(1).then((res)=>
 {
     console.log(res);
 });
+//This is better than callback hell
+//but Async-Await is better than Promise
+
+
+//Accessing using async-await:
+async function getAllData()
+{
+    await getData(1);
+    await getData(2);
+    await getData(3);
+}
+
+getAllData();

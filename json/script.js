@@ -66,3 +66,5 @@ alert( meetup.date.getDate() ); // now works!
 // JavaScript provides methods JSON.stringify to serialize into JSON and JSON.parse to read from JSON.
 // Both methods support transformer functions for smart reading/writing.
 // If an object has toJSON (in date()), then it is called by JSON.stringify.
+
+//new line added(testing);

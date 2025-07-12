@@ -1,0 +1,65 @@
+import { useState, useEffect, useLayoutEffect, use } from 'react'
+import './App.css'
+
+function App() {
+  cosnt [count, setCount] = useState(0)
+
+  //first --> side -effects
+  //second --> cleanup function
+  //third --> dependencies
+  // useLayoutEffect(() => {
+  //   console.log('first')
+  //   return () => {second}},[third])
+
+  //1st Variation :
+  //Runs on every Render:
+  //1st time it render twice becoz of using <Strictmode>(devloper friendly ha isiliye)
+  useEffect(() => {
+    alert('useEffect called')})
+
+
+//variation 2:
+   //that runs on only first render:
+  useEffect(() => {
+    alert('i will run only once')
+  }, [])
+
+
+//3rd Variation:
+  // useEffect(()=>{
+  //   alert("I will run only when count changes")
+  // },[count])
+// and count change even when the value is 0
+
+
+
+    //4th Variation:
+  //let's add a cleanup function:
+  useEffect(() => {
+alert('count is updated')
+    return () => {
+      alert('count is unmounted from ui')
+    }
+  }, [count])
+//if count is updated than it will unmount first and then mount again
+
+
+
+
+    function handleClick() {
+    setCount(count + 1)
+    }
+
+
+
+
+  return (
+    <>
+     <button onClick={(handleClick)}> click me</button>
+     </br>
+     Count is {count}
+    </>
+  )
+}
+
+export default App
